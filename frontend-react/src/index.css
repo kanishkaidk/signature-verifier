@@ -1,7 +1,55 @@
 * { box-sizing: border-box; }
-body { margin: 0; background: #f9fafb; color: #111827; }
-button { padding: 0.6em 1.1em; border-radius: 8px; border: 1px solid #ddd; background: #111827; color: white; cursor: pointer; }
-button:disabled { opacity: 0.6; cursor: not-allowed; }
+body { margin: 0; background: #ffffff; color: #000000; }
+button { padding: 0.6em 1.1em; border-radius: 8px; border: 1px solid #000; background: #000; color: #fff; cursor: pointer; }
+button:hover { filter: brightness(1.1); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.app-root { font-family: ui-sans-serif, system-ui, sans-serif; padding: 24px; max-width: 1000px; margin: 0 auto; }
+.app-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.app-header h1 { font-size: 24px; margin: 0; letter-spacing: 0.4px; }
+.tagline { margin: 4px 0 0 0; color: #4d4d4d; font-size: 13px; }
+.navbar { border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo-circle { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #000; color: #fff; font-weight: 700; letter-spacing: 0.5px; }
+.hero { border: 1px solid #000; border-radius: 12px; padding: 28px; background: #fff; text-align: center; margin-bottom: 16px; }
+.hero h2 { margin: 0 0 8px 0; font-size: 28px; }
+.hero p { margin: 0 0 14px 0; color: #4d4d4d; }
+.hero-actions { display: grid; place-items: center; }
+.tabs { display: flex; gap: 8px; }
+.tab { background: #fff; color: #000; border: 1px solid #000; }
+.tab.active { background: #000; color: #fff; }
+.panel { margin-top: 16px; padding: 16px; border: 1px solid #000; border-radius: 10px; background: #fff; }
+.pickers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.dropzone { border: 2px dashed #000; padding: 12px; border-radius: 10px; text-align: center; background: #fff; }
+.dropzone input { width: 100%; }
+.preview { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+.preview .side { border: 1px solid #000; border-radius: 8px; background: #fff; min-height: 220px; display: grid; place-items: center; overflow: hidden; }
+.preview .side img { max-width: 100%; max-height: none; object-fit: contain; transform-origin: center center; }
+.zoom-wrap { width: 100%; height: 220px; overflow: auto; display: grid; place-items: center; }
+.preview .overlay { position: relative; }
+.preview .overlay img:nth-child(1) { position: relative; z-index: 1; }
+.preview .overlay img:nth-child(2) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; z-index: 2; }
+.slider { margin-top: 10px; display: grid; gap: 6px; }
+.actions { display: flex; gap: 10px; margin-top: 12px; }
+.progress { margin-top: 12px; height: 8px; background: #d4d4d4; border-radius: 9999px; overflow: hidden; border: 1px solid #000; }
+.progress .bar { height: 100%; width: 40%; background: linear-gradient(90deg, #000, #444); animation: prog 1.2s infinite ease-in-out; }
+@keyframes prog { 0%{transform: translateX(-100%);} 100%{transform: translateX(300%);} }
+.error { color: #000; margin-top: 8px; }
+.result { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
+.ring { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#000 0%, #e5e7eb 0); border: 1px solid #000; transition: background .3s ease; }
+.ring-inner { width: 76px; height: 76px; border-radius: 50%; background: white; display: grid; place-items: center; font-weight: 600; }
+.verdict { font-size: 20px; font-weight: 700; color: #000; transition: color .3s ease; }
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+table.results { width: 100%; border-collapse: collapse; }
+table.results th, table.results td { border: 1px solid #000; padding: 8px; text-align: left; }
+.cards { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.card { border: 1px solid #000; border-radius: 10px; padding: 12px; background: #fff; }
+.card-title { font-weight: 600; margin-bottom: 4px; }
+.card-value { font-size: 22px; font-weight: 700; }
+.card-sub { color: #4d4d4d; font-size: 12px; }
+
+.footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid #000; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.footer a { color: #000; text-decoration: underline; }
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

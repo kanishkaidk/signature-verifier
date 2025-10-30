@@ -1,0 +1,7 @@
+{
+  "accuracy": 0.91,
+  "f1": 0.90,
+  "threshold": 0.85,
+  "last_trained": "2025-10-01T00:00:00Z"
+}
+
