@@ -1,0 +1,8 @@
+flask
+flask-cors
+pillow
+torch
+torchvision
+tqdm
+reportlab
+
