@@ -230,35 +230,35 @@
 
 ### Main Verification Dashboard
 
-![Verification Dashboard](outputs/Screenshot%202025-11-02%20171028.jpg)
+![Verification Dashboard](images/verification-dashboard.jpg)
 
 *Main verification interface with drag & drop upload and real-time results*
 
 ### Verification Results
 
-![Verification Results](outputs/Screenshot%202025-11-02%20171144.jpg)
+![Verification Results](images/verification-results.jpg)
 
 *Detailed verification results with similarity scores and handwriting analysis*
 
 ### Analytics Dashboard
 
-![Analytics Dashboard](outputs/screencapture-localhost-8080-2025-11-02-17_13_33.png)
+![Analytics Dashboard](images/analytics-dashboard.png)
 
 *Comprehensive analytics showing verification history and statistics*
 
 ### About Page
 
-![About Page](outputs/screencapture-localhost-8080-about-2025-11-02-17_12_53.png)
+![About Page](images/about-page.png)
 
 *About page with model metrics and platform information*
 
 ### Additional Features
 
-![Feature Screenshot 1](outputs/Screenshot%202025-11-02%20170845.jpg)
+![Feature Screenshot 1](images/feature-1.jpg)
 
 *Additional verification features and visualizations*
 
-![Feature Screenshot 2](outputs/Screenshot%202025-11-02%20171240.jpg)
+![Feature Screenshot 2](images/feature-2.jpg)
 
 *Batch verification and advanced features*
 
