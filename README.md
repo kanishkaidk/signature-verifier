@@ -84,7 +84,6 @@
 - Image hashing for integrity verification
 - In-memory processing (no permanent storage)
 - Secure API endpoints with CORS protection
-- Rate limiting and input validation
 
 ---
 
@@ -112,7 +111,6 @@
 - **Siamese Neural Network** - Signature similarity model
 - **ResNet Backbone** - Feature extraction
 - **Grad-CAM** - Explainable AI visualization
-- **ORB/SIFT** - Feature matching (optional)
 
 ---
 
@@ -417,7 +415,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by Kanishka**
 
 ⭐ Star this repo if you find it helpful!
 
