@@ -1,0 +1,12 @@
+flask
+flask-cors
+pillow
+torch
+torchvision
+tqdm
+reportlab
+opencv-python
+numpy
+scikit-image
+gunicorn
+

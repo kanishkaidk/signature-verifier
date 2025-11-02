@@ -1,3 +1,12 @@
+import sys
+import os
+# Add parent directory to path for imports to work in deployment
+# When running from backend/app.py, this adds the project root (containing 'backend' folder) to path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from backend.inference import (
