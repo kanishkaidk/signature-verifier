@@ -2,6 +2,7 @@
   "accuracy": 0.91,
   "f1": 0.90,
   "threshold": 0.85,
-  "last_trained": "2025-10-01T00:00:00Z"
+  "last_trained": "2025-10-01T00:00:00Z",
+  "note": "Threshold set to 0.85 as requested. System now uses stroke analysis + multi-signal verification for better forgery detection. Scores 0.85+ = Same person, 0.75-0.85 = Uncertain, <0.75 = Different"
 }
 

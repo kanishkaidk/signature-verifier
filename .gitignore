@@ -1,2 +1,38 @@
-https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsiZGF0YSI6NDc1NzM3OTUsInB1ciI6ImJsb2JfaWQifX0=--8ee403ff9688ebca2fc4e75bc1397efb9a5cc4bf//.gitignore
 .env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+outputs/
+*.cache
+node_modules/
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Frontend build
+frontend-vite/dist/
+frontend-vite/.vite/
+frontend-vite/node_modules/
+
+# Model files (if large)
+*.pth
+*.pt
+!backend/model/metrics.json
