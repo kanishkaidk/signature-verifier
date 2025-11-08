@@ -27,9 +27,9 @@ class FeatureExtractor(nn.Module):
 
 
 class SiameseNetwork(nn.Module):
-    def __init__(self, embed_dim=256):
+    def __init__(self, embed_dim=256, load_feature_extractor: bool = False):
         super().__init__()
-        self.feature_extractor = FeatureExtractor(embed_dim=embed_dim)
+        self.feature_extractor = FeatureExtractor(embed_dim=embed_dim) if load_feature_extractor else None
         self.backbone = models.resnet18(pretrained=True)
         self.backbone.fc = nn.Identity()
 

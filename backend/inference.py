@@ -17,6 +17,7 @@ from backend.visualization import (
 )
 from typing import Tuple
 import os
+import gc
 
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 os.environ.setdefault("MKL_NUM_THREADS", "1")
@@ -42,11 +43,14 @@ _model_singleton = None
 def _ensure_model_loaded():
     global _model_singleton
     if _model_singleton is None:
-        model = SiameseNetwork().to(device)
+        model = SiameseNetwork(load_feature_extractor=False).to(device)
         # Load the existing checkpoint in the repo
         checkpoint_path = "backend/model/siamese_model.pth"
         state = torch.load(checkpoint_path, map_location=device)
-        model.load_state_dict(state)
+        with torch.no_grad():
+            missing, unexpected = model.load_state_dict(state, strict=False)
+        del state
+        gc.collect()
         model.eval()
         _model_singleton = model
     return _model_singleton
