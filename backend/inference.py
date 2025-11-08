@@ -16,6 +16,16 @@ from backend.visualization import (
     CANVAS_SIZE
 )
 from typing import Tuple
+import os
+
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+
+try:
+    torch.set_num_threads(1)
+    torch.set_num_interop_threads(1)
+except Exception:
+    pass
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
