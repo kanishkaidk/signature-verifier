@@ -2,10 +2,11 @@
 
 <div align="center">
 
-![SignGuard Logo](https://img.shields.io/badge/SignGuard-Signature%20Verification-blue?style=for-the-badge)
+[![SignGuard Logo](https://img.shields.io/badge/SignGuard-Signature%20Verification-blue?style=for-the-badge)](outputs/screen_share.mp4)
 
 **AI-Powered Signature Verification System with Deep Learning & Explainable AI**
 
+[🎬 Demo Video](outputs/screen_share.mp4)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18.3+-61DAFB.svg)](https://reactjs.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-000000.svg)](https://flask.palletsprojects.com/)
