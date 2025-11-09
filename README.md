@@ -46,11 +46,7 @@
 - **Handwriting Analysis** - Analyzes stroke patterns, flow, style, and structural features
 - **Beautiful UI** - Modern React-based interface with real-time feedback
 
-<p align="center">
-  <video src="outputs/screen_share.mp4" controls width="720">
-    Your browser does not support the video tag. <a href="outputs/screen_share.mp4">Watch the demo video</a>.
-  </video>
-</p>
+[🎬 **Demo Video** (watch the workflow walkthrough)](outputs/screen_share.mp4)
 
 ---
 
