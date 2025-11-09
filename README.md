@@ -46,6 +46,8 @@
 - **Handwriting Analysis** - Analyzes stroke patterns, flow, style, and structural features
 - **Beautiful UI** - Modern React-based interface with real-time feedback
 
+[🎬 **Demo Video** (watch the workflow walkthrough)](outputs/screen_share.mp4)
+
 ---
 
 ## ✨ Features
