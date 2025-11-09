@@ -1,0 +1,67 @@
+# flyctl launch added from .gitignore
+**/.env
+**/.venv
+**/venv
+**/env
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/*.so
+**/*.egg
+**/*.egg-info
+**/dist
+**/build
+**/*.log
+**/outputs
+**/*.cache
+**/node_modules
+**/.DS_Store
+**/*.swp
+**/*.swo
+**/*~
+
+# IDE
+**/.vscode
+**/.idea
+**/*.sublime-project
+**/*.sublime-workspace
+
+# Frontend build
+**/frontend-vite/dist
+**/frontend-vite/.vite
+**/frontend-vite/node_modules
+
+# Model files (if large)
+**/*.pth
+**/*.pt
+!backend/model/siamese_model.pth
+!**/backend/model/metrics.json
+
+# flyctl launch added from frontend-vite/.gitignore
+# Logs
+frontend-vite/**/logs
+frontend-vite/**/*.log
+frontend-vite/**/npm-debug.log*
+frontend-vite/**/yarn-debug.log*
+frontend-vite/**/yarn-error.log*
+frontend-vite/**/pnpm-debug.log*
+frontend-vite/**/lerna-debug.log*
+
+frontend-vite/**/node_modules
+frontend-vite/**/dist
+frontend-vite/**/dist-ssr
+frontend-vite/**/*.local
+
+# Editor directories and files
+frontend-vite/**/.vscode/*
+!frontend-vite/**/.vscode/extensions.json
+frontend-vite/**/.idea
+frontend-vite/**/.DS_Store
+frontend-vite/**/*.suo
+frontend-vite/**/*.ntvs*
+frontend-vite/**/*.njsproj
+frontend-vite/**/*.sln
+frontend-vite/**/*.sw?
+fly.toml

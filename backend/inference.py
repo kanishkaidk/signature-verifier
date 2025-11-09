@@ -45,7 +45,8 @@ def _ensure_model_loaded():
     if _model_singleton is None:
         model = SiameseNetwork(load_feature_extractor=False).to(device)
         # Load the existing checkpoint in the repo
-        checkpoint_path = "backend/model/siamese_model.pth"
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        checkpoint_path = os.path.join(base_dir, "model", "siamese_model.pth")
         state = torch.load(checkpoint_path, map_location=device)
         with torch.no_grad():
             missing, unexpected = model.load_state_dict(state, strict=False)

@@ -1,0 +1,40 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+ARG TORCH_VERSION=2.2.2+cpu
+ARG TORCHVISION_VERSION=0.17.2+cpu
+ARG TORCH_INDEX_URL=https://download.pytorch.org/whl/cpu
+
+ENV PIP_NO_CACHE_DIR=1
+ENV TORCH_HOME=/opt/torch-cache
+
+RUN pip install --upgrade pip \
+    && pip install 'numpy<2' \
+    && pip install torch==${TORCH_VERSION} torchvision==${TORCHVISION_VERSION} --index-url ${TORCH_INDEX_URL} \
+    && pip install -r requirements.txt \
+    && python -c "from torchvision.models import resnet18; resnet18(weights='DEFAULT')"
+
+COPY backend ./backend
+COPY backend/model ./backend/model
+
+ENV PYTHONPATH=/app
+
+WORKDIR /app/backend
+
+EXPOSE 8080
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--threads", "2", "--timeout", "120", "app:app"]
+

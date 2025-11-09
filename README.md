@@ -173,6 +173,36 @@
    
    The frontend will run on `http://localhost:5173`
 
+### ☁️ Production Deployment (Docker + Fly.io)
+
+- **Prerequisites**
+  - Install the [Fly CLI](https://fly.io/docs/flyctl/install/) and run `flyctl auth login`
+  - Ensure Docker is available locally (Fly will build remotely with `--remote-only`)
+- **Backend (`Dockerfile.backend`)**
+  - Image installs the PyTorch CPU wheels plus system libs (`libgl1`, `ffmpeg`, etc.) needed by OpenCV
+  - Runs `gunicorn app:app` on port `8080` and copies the trained checkpoint from `backend/model/siamese_model.pth`
+  - Deploy with:
+    ```bash
+    flyctl deploy --config fly.toml --remote-only
+    flyctl machine start <machine-id> -a signature-verifier-backend  # if the VM auto-stops
+    flyctl logs -a signature-verifier-backend --no-tail
+    curl https://signature-verifier-backend.fly.dev/health
+    ```
+- **Frontend (`frontend-vite/Dockerfile`)**
+  - Builds the Vite app with `VITE_API_URL` baked in, then serves the static assets from Nginx
+  - Deploy from the `frontend-vite` folder:
+    ```bash
+    flyctl deploy --config fly.toml --remote-only
+    ```
+- **Scaling & keep-alive**
+  ```bash
+  flyctl machine update <machine-id> --autostop=false --autostart=true -a signature-verifier-backend
+  flyctl scale vm shared-cpu-2x --memory 2048 -a signature-verifier-backend
+  ```
+- **Troubleshooting**
+  - If the backend logs show `numpy` errors, redeploy after pinning `numpy<2` in `backend/requirements.txt`
+  - Missing model errors set `backend/inference.py` to load the checkpoint via `os.path.join(os.path.dirname(__file__), "model", "siamese_model.pth")`
+
 ---
 
 ## 🚀 Usage

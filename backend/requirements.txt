@@ -1,11 +1,10 @@
 flask
 flask-cors
 pillow
-torch
-torchvision
 tqdm
 reportlab
 opencv-python
-numpy
+numpy<2
 scikit-image
+gunicorn
 
